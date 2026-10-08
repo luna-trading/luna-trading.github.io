@@ -18,7 +18,7 @@ header{background:var(--navy);color:#fff}
 .hero p{font-size:1.08rem;max-width:720px}
 .btn{display:inline-block;background:#fff;color:#2458bd;padding:13px 25px;border-radius:999px;text-decoration:none;font-weight:800;margin-top:12px}
 .luna{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:24px;padding:28px;backdrop-filter:blur(5px)}
-.luna-face{font-size:4.5rem;text-align:center}
+.luna-portrait{display:block;width:160px;height:160px;object-fit:cover;object-position:center;border-radius:50%;margin:0 auto 12px;border:4px solid #ffd0e7;background:#fff}
 .luna h2{text-align:center;margin:5px 0 12px;font-size:1.45rem}
 .luna p{font-size:.95rem;margin:0}
 .container{max-width:1120px;margin:auto;padding:58px 20px}
@@ -37,14 +37,15 @@ footer a{color:#fff}
 @media(max-width:780px){.hero-inner{grid-template-columns:1fr}.cards,.steps{grid-template-columns:1fr}.hero{padding:50px 18px}.container{padding:42px 16px}.nav{display:block;text-align:center}.nav small{display:block;margin-top:4px}}
 .step[href]:hover{border-color:#e99abb;box-shadow:0 5px 18px rgba(0,0,0,.08)}
 
-/* GitHub自動更新履歴 */
+.luna-mini{width:72px;height:72px;object-fit:cover;border-radius:50%;float:right;margin:0 0 8px 12px;border:3px solid #ffc4de}
+/* 手動更新履歴：最大5行、スクロールなし */
 .updates{background:#fff;border:1px solid #edf0f5;border-radius:18px;padding:24px;margin:24px 0 32px}
-.updates h2{margin:0 0 8px;font-size:1.3rem}.updates ul{list-style:none;padding:0;margin:0;max-height:450px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
-.updates li{padding:13px 0;border-bottom:1px solid #edf0f5;display:flex;gap:16px;align-items:baseline}
-.updates li:last-child{border-bottom:0}.updates time{white-space:nowrap;color:#687487;font-size:.88rem}
-.updates a{color:#2656a5;text-decoration:none}.updates a:hover{text-decoration:underline}
-.updates .status{color:#687487;font-size:.9rem;margin:10px 0 0}
-@media(max-width:600px){.updates li{display:block}.updates time{display:block;margin-bottom:4px}}
+.updates h2{margin:0 0 12px;font-size:1.3rem}
+.updates ul{list-style:none;padding:0;margin:0}
+.updates li{padding:10px 0;border-bottom:1px solid #edf0f5;display:flex;gap:16px;align-items:baseline}
+.updates li:last-child{border-bottom:0}
+.updates time{white-space:nowrap;color:#687487;font-size:.88rem;min-width:90px}
+@media(max-width:600px){.updates li{display:block}.updates time{display:block;margin-bottom:2px}}
 </style>
 </head>
 <body>
@@ -64,7 +65,7 @@ footer a{color:#fff}
       <a class="btn" href="#courses">講座をはじめる ↓</a>
     </div>
     <aside class="luna">
-      <div class="luna-face">🌸🎀</div>
+      <img class="luna-portrait" src="luna.png" alt="ピンクのボブヘアとメイド服のルナ">
       <h2>はじめまして、ルナです</h2>
       <p>ここでは、投資をまったく知らない方にも分かるように、難しい言葉をできるだけかみくだいて説明します。まずはFXの第1段階から、一緒に進んでいきましょう♪</p>
     </aside>
@@ -78,9 +79,14 @@ footer a{color:#fff}
 
   <section class="updates" id="updates" aria-labelledby="updates-heading">
     <h2 id="updates-heading">📢 更新履歴</h2>
-      <p>教材やサイトの最新更新を自動表示しています。</p>
-      <ul id="updates-list" aria-live="polite"></ul>
-      <p class="status" id="updates-status">更新情報を読み込み中です…</p>
+    <!-- 更新時は一番上に新しい<li>を追加し、一番下の<li>を削除して5件に保ってください。 -->
+    <ul>
+      <li><time datetime="2026-10-08">2026.10.08</time><span>更新履歴を手動・5行表示に変更しました。</span></li>
+      <li><time>—</time><span>第1段階「FXの基礎」ページを追加しました。</span></li>
+      <li><time>—</time><span>第1段階へのリンクを追加しました。</span></li>
+      <li><time>—</time><span>サイトの表記を「ルナ」に統一しました。</span></li>
+      <li><time>—</time><span>「ルナの投資学習サイト」を公開しました。</span></li>
+    </ul>
   </section>
 
   <section id="courses">
@@ -110,7 +116,7 @@ footer a{color:#fff}
     <div class="step"><div class="num">9</div><div><b>検証・記録・改善</b><br>トレードを振り返って改善</div></div>
     <div class="step"><div class="num">10</div><div><b>総合実戦・卒業</b><br>学んだことを総合的に実践</div></div>
   </div>
-  <div class="notice"><b>🌸 ルナのポイント</b><br>「勝てる方法を覚える」だけではなく、自分で相場を見て考え、判断し、検証できるようになることを目標にします。</div>
+  <div class="notice"><img class="luna-mini" src="luna.png" alt="ルナ"><b>🌸 ルナのポイント</b><br>「勝てる方法を覚える」だけではなく、自分で相場を見て考え、判断し、検証できるようになることを目標にします。</div>
 </section>
 
 <div class="container">
@@ -131,51 +137,5 @@ footer a{color:#fff}
   <small>本サイトは学習目的の教材です。投資には損失が生じる可能性があります。最終的な投資判断はご自身で行ってください。</small>
 </footer>
 
-<script>
-(function () {
-  const list = document.getElementById('updates-list');
-  const status = document.getElementById('updates-status');
-  const endpoint = 'https://api.github.com/repos/luna-trading/luna-trading.github.io/commits?per_page=100';
-  fetch(endpoint, { headers: { 'Accept': 'application/vnd.github+json' } })
-    .then(response => { if (!response.ok) throw new Error('GitHub API error'); return response.json(); })
-    .then(commits => {
-      if (!Array.isArray(commits) || !commits.length) { status.textContent = '更新履歴はまだありません。'; return; }
-      commits.forEach(item => {
-        const li = document.createElement('li');
-        const time = document.createElement('time');
-        const rawDate = item.commit && item.commit.committer && item.commit.committer.date;
-        if (rawDate) {
-          const d = new Date(rawDate);
-          if (!Number.isNaN(d.getTime())) {
-            time.dateTime = d.toISOString();
-            time.textContent = new Intl.DateTimeFormat('ja-JP', {timeZone:'Asia/Tokyo', year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
-          }
-        }
-        const a = document.createElement('a');
-        a.href = item.html_url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        const original = (item.commit && item.commit.message || 'サイト更新').split('\n')[0];
-        // GitHubの定型英語メッセージを日本語に置き換えます。
-        // 自由文の英語を完全に自動翻訳する機能ではありません。
-        let japanese = original;
-        if (/^(create|add) /i.test(original)) japanese = 'ファイル・教材を追加';
-        else if (/^(update|edit|modify) /i.test(original)) japanese = 'ファイル・教材を更新';
-        else if (/^(delete|remove) /i.test(original)) japanese = 'ファイルを削除';
-        else if (/^(initial commit)$/i.test(original)) japanese = 'サイトを公開';
-        else if (/^(merge pull request|merge branch)/i.test(original)) japanese = '変更を統合';
-        else if (/[A-Za-z]/.test(original) && !/[ぁ-んァ-ヶ一-龯]/.test(original)) japanese = 'サイトを更新';
-        a.textContent = japanese;
-        if (japanese !== original) a.title = 'GitHubの記録: ' + original;
-        li.append(time, a);
-        list.appendChild(li);
-      });
-      status.textContent = '※GitHubの公開コミット履歴から取得しています。';
-    })
-    .catch(() => {
-      status.textContent = '更新履歴を取得できませんでした。しばらくしてから再読み込みしてください。';
-    });
-})();
-</script>
 </body>
 </html>
