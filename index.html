@@ -61,6 +61,17 @@ header{background:#fff!important;border-bottom:1px solid #f2d8e6;box-shadow:0 5p
 section[id]{scroll-margin-top:145px}
 @media(max-width:960px){.luna-header-main{flex-wrap:wrap}.luna-header-tools{justify-content:flex-start}.luna-course-nav{grid-template-columns:repeat(3,minmax(0,1fr))}section[id]{scroll-margin-top:225px}}
 @media(max-width:620px){.luna-header-shell{padding:9px 12px}.luna-header-main{gap:7px;margin-bottom:8px}.luna-header-brand{font-size:1.02rem}.luna-header-tools{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:3px;scrollbar-width:thin}.luna-header-tools a{font-size:.74rem;padding:6px 8px;flex:0 0 auto}.luna-course-nav{display:flex;overflow-x:auto;gap:7px;padding:3px 0 8px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}.luna-course-nav a{flex:0 0 auto;min-height:39px;font-size:.78rem;padding:8px 12px;white-space:nowrap}section[id]{scroll-margin-top:145px}}
+</style><style>
+/* 2026-10-10: 全メニューを小さくして横一列に統一 */
+header .luna-header-shell{max-width:none;display:flex;align-items:center;gap:6px;padding:9px 12px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;white-space:nowrap}
+header .luna-header-main{display:contents}
+header .luna-header-brand{font-size:clamp(.95rem,1.1vw,1.25rem);margin-right:auto;flex-shrink:0}
+header .luna-header-tools{display:contents}
+header .luna-header-tools a,header .luna-course-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:31px;padding:6px 9px;border-radius:9px;font-size:clamp(.65rem,.73vw,.81rem);line-height:1.1;white-space:nowrap;flex:0 0 auto;box-shadow:none}
+header .luna-course-nav{display:contents}
+header .luna-course-nav a:hover{transform:translateY(-1px)}
+@media(max-width:960px){header .luna-header-shell{display:flex;flex-wrap:nowrap;gap:5px;padding:8px 10px}header .luna-header-brand{font-size:1rem}header .luna-header-tools a,header .luna-course-nav a{font-size:.72rem;padding:6px 8px;min-height:30px}}
+@media(max-width:620px){header .luna-header-shell{overflow-x:auto;flex-wrap:nowrap}header .luna-header-brand{font-size:.95rem}section[id]{scroll-margin-top:80px}}
 </style></head><body><header><div class="luna-header-shell">
 <div class="luna-header-main"><a class="luna-header-brand" href="index.html">🌸 ルナの投資学習サイト</a>
 <nav aria-label="サイトメニュー" class="luna-header-tools">
